@@ -1,0 +1,7 @@
+composer.lock
+protoc-gen-php-grpc
+vendor/
+proto-files/
+.phpunit.result.cache
+.php-cs-fixer.cache
+.phpunit.cache/

@@ -1,0 +1,8 @@
+.editorconfig export-ignore
+.editorconfig export-ignore
+.gitmodules export-ignore
+Makefile export-ignore
+phpunit.xml export-ignore
+psalm.xml export-ignore
+/tests export-ignore
+/proto-files export-ignore

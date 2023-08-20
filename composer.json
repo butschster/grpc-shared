@@ -1,0 +1,63 @@
+{
+  "description": "Shared package for gRPC services with DTO",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Pavel Buchnev",
+      "email": "butschster@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "ext-grpc": "*",
+    "cuyz/valinor": "^1.4",
+    "grpc/grpc": "^1.52",
+    "ramsey/uuid": "^4.7",
+    "spiral/auth": "^3.7",
+    "spiral/core": "^3.7",
+    "spiral/hmvc": "^3.7",
+    "spiral/roadrunner-grpc": "^3.0",
+    "spiral/telemetry": "^3.7"
+  },
+  "require-dev": {
+    "doctrine/annotations": "^2.0",
+    "friendsofphp/php-cs-fixer": "^3.17",
+    "mockery/mockery": "^1.6",
+    "phpunit/phpunit": "^10.2",
+    "spiral/boot": "^3.7",
+    "spiral/config": "^3.7",
+    "spiral/files": "^3.7",
+    "spiral/reactor": "^3.7",
+    "spiral/roadrunner-cli": "^2.5",
+    "symfony/console": "^6.3",
+    "symfony/var-dumper": "^6.1",
+    "vimeo/psalm": "^5.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Shared\\gRPC\\": [
+        "src",
+        "generated"
+      ]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/src",
+      "Generator\\": "generator/src"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "psalm": "vendor/bin/psalm --config=psalm.xml ./src",
+    "cs-check": "vendor/bin/php-cs-fixer fix ./src --rules=@PSR12 --dry-run",
+    "cs-fix": "vendor/bin/php-cs-fixer fix ./src --rules=@PSR12",
+    "generate": "php generator/bin/console generate"
+  },
+  "config": {
+    "secure-http": false,
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
